@@ -12,7 +12,7 @@ function Category({handleChange}) {
           <input 
             type="radio"
             handleChange={handleChange} 
-            value="all" 
+            value="" 
             title="All" 
             name="test" 
           />
