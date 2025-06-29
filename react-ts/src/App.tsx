@@ -1,4 +1,4 @@
-import Counter from "./components/Counter"
+import MyComponentsTwo from "./components/MyComponentsTwo"
 
 function App() {
 
@@ -12,7 +12,8 @@ function App() {
       {/* <MyProviderOne>
         <MyComponentOne />
       </MyProviderOne> */}
-      <Counter />
+      {/* <Counter /> */}
+      <MyComponentsTwo /> 
     </>
   )
 }

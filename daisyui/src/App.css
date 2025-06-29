@@ -1,0 +1,5 @@
+/* src/index.css */
+@import "tailwindcss"; /* Core Tailwind CSS styles */
+@plugin "daisyui";    /* DaisyUI as a Tailwind plugin for v4 */
+
+/* You can add global custom styles or theme customizations here if needed */
