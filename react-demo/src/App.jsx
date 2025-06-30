@@ -1,19 +1,50 @@
-import UniqueId from "./components/UniqueId";
-import useFetch from "./components/useFetch"
-
+import { useState } from "react";
+import "./style.css";
 const App = () => { 
+  const [inputvalue, setinputvalue] = useState("");
 
-  const [data] = useFetch('https://jsonplaceholder.typicode.com/todos');
-  
+  function display(value) {
+    setinputvalue(inputvalue + value);
+  }
 
-  return <div>
-    {data <0 && data.map(item => {
-      return <p id={item.id}>{item.title}</p>
-    })}
-    <UniqueId />
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est asperiores nihil earum hic nobis reprehenderit sint placeat eligendi officiis, ex dolore voluptas, magni natus qui iusto adipisci expedita vitae esse?</p>
-    <UniqueId />
-  </div>
+  function calculate() {
+    var answers = eval(inputvalue);
+    setinputvalue(answers);
+  }
+
+  function clear() {
+    setinputvalue("");
+  }
+
+  return (
+    <form class="calculator" name="calc">
+      <input type="text" class="value" value={inputvalue} />
+      <span class="num clear" onClick={() => clear()}>
+        c
+      </span>
+      <span onClick={() => display("/")}>/</span>
+      <span onClick={() => display("*")}>*</span>
+      <span onClick={() => display("7")}>7</span>
+      <span onClick={() => display("8")}>8</span>
+      <span onClick={() => display("9")}>9</span>
+      <span onClick={() => display("-")}>-</span>
+      <span onClick={() => display("4")}>4</span>
+      <span onClick={() => display("5")}>5</span>
+      <span onClick={() => display("6")}>6</span>
+      <span className="plus" onClick={() => display("+")}>
+        +
+      </span>
+      <span onClick={() => display("1")}>1</span>
+      <span onClick={() => display("2")}>2</span>
+      <span onClick={() => display("3")}>3</span>
+      <span onClick={() => display("0")}>0</span>
+      <span onClick={() => display("00")}>00</span>
+      <span onClick={() => display(".")}>.</span>
+      <span class="num equal" onClick={() => calculate()}>
+        =
+      </span>
+    </form>
+  );
 }
 
 export default App
