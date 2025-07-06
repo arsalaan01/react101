@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Enable manual dark-mode switching via class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Add any custom theme variables if needed */
+@theme {
+  /* optional custom tokens */
+}
